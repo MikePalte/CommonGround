@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "644515070094",
+    "firebase_url": "https://commongroundapp-78382.firebaseio.com",
+    "project_id": "commongroundapp-78382",
+    "storage_bucket": "commongroundapp-78382.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644515070094:android:c962d3af9258577f0289df",
+        "android_client_info": {
+          "package_name": "com.example.commonground"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644515070094-ghufulv2oej2bskdn9n5vot39qe5i3it.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrbTB0r-XuTXoGz5C3iSNwMvNoeb0ergc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "644515070094-ghufulv2oej2bskdn9n5vot39qe5i3it.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
