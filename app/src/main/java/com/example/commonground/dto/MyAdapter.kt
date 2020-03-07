@@ -1,7 +1,6 @@
-package com.example.commonground.DTO
+package com.example.commonground.dto
 
 import android.content.Context
-import android.graphics.ColorSpace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.commonground.R
 
-class MyAdapter(var mCtx:Context, var resources: Int, var items:List<CalendarEvent>):ArrayAdapter<CalendarEvent>(mCtx, resources, items) {
+class MyAdapter(private var mCtx:Context, private var resources: Int, private var items:List<CalendarEvent>):ArrayAdapter<CalendarEvent>(mCtx, resources, items) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val layoutInflater:LayoutInflater = LayoutInflater.from(mCtx)
