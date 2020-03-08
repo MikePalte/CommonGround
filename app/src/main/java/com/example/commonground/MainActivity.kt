@@ -6,13 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ListView
 import androidx.lifecycle.ViewModelProviders
-import com.example.commonground.DTO.CalendarEvent
-import com.example.commonground.DTO.MyAdapter
-import com.example.commonground.ui.main.MainFragment
+import com.example.commonground.dto.CalendarEvent
+import com.example.commonground.dto.MyAdapter
 import com.example.commonground.ui.main.MainViewModel
-import com.google.firebase.Timestamp
-import kotlinx.android.synthetic.main.main_fragment.*
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.title = "Title"
 
 
-        var listview = findViewById<ListView>(R.id.main_listview)
+        var listView = findViewById<ListView>(R.id.main_listview)
 
         var list = mutableListOf<CalendarEvent>()
 
@@ -39,13 +35,17 @@ class MainActivity : AppCompatActivity() {
         viewModel.events.observe(this, androidx.lifecycle.Observer {
             events -> events.forEach {
             list.add(it)
-            listview.adapter = MyAdapter(this, R.layout.row, list)
+            listView.adapter = MyAdapter(this, R.layout.row, list)
 
         }
         })
 
     }
 
+    /**
+     * Add new event function
+     * @param view View object.
+     */
     fun addNewEvent(view: View) {
         val intent = Intent(applicationContext, AddEventActivity::class.java)
 

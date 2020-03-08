@@ -1,4 +1,4 @@
-package com.example.commonground.DTO
+package com.example.commonground.dto
 
 import com.google.firebase.Timestamp
 
