@@ -2,10 +2,6 @@ package com.example.commonground
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.example.commonground.ui.main.MainFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.commonground.ui.main.MainViewModel
@@ -15,11 +11,11 @@ import java.util.*
 
 
 class AddEventActivity : AppCompatActivity() {
-
+    private lateinit var viewModel: MainViewModel
     companion object {
         fun newInstance() = AddEventActivity()
     }
-    private lateinit var viewModel: MainViewModel
+
 
   /*  override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,12 +28,12 @@ class AddEventActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_event)
 
-      val actionbar = supportActionBar
+      val ACTION_BAR = supportActionBar
       //set actionbar title
-      actionbar!!.title = "New Activity"
+      ACTION_BAR!!.title = "New Activity"
       //set back button
-      actionbar.setDisplayHomeAsUpEnabled(true)
-      actionbar.setDisplayHomeAsUpEnabled(true)
+      ACTION_BAR.setDisplayHomeAsUpEnabled(true)
+      ACTION_BAR.setDisplayHomeAsUpEnabled(true)
 
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
