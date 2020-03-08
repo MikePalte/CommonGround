@@ -16,12 +16,10 @@ import java.util.*
 
 class AddEventActivity : AppCompatActivity() {
 
-    companion object {
-        fun newInstance() = AddEventActivity()
-    }
+
     private lateinit var viewModel: MainViewModel
 
-  /*  override fun onCreateView(
+    /*  override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
@@ -32,20 +30,23 @@ class AddEventActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_event)
 
-      val actionbar = supportActionBar
-      //set actionbar title
-      actionbar!!.title = "New Activity"
-      //set back button
-      actionbar.setDisplayHomeAsUpEnabled(true)
-      actionbar.setDisplayHomeAsUpEnabled(true)
+        val actionbar = supportActionBar
+        //set actionbar title
+        actionbar!!.title = "New Activity"
+        //set back button
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
 
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.events.observe(this, Observer {
-                events -> txtEventName.text = events.get(0).eventName
+        viewModel.events.observe(this, Observer { events ->
+            txtEventName.text = events[0].eventName
         })
-        btnAddEvent.setOnClickListener(){
-            viewModel.db.addEvent(editEventName.text.toString(), Timestamp(Date(editEventDate.text.toString())))
+        btnAddEvent.setOnClickListener() {
+            viewModel.db.addEvent(
+                editEventName.text.toString(),
+                Timestamp(Date(editEventDate.text.toString()))
+            )
             editEventName.text.clear()
             editEventDate.text.clear()
         }
@@ -56,5 +57,8 @@ class AddEventActivity : AppCompatActivity() {
         return true
     }
 
+    companion object {
+        fun newInstance() = AddEventActivity()
+    }
 
 }

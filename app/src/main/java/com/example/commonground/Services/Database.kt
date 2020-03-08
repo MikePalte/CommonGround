@@ -7,11 +7,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlin.collections.ArrayList
 
 class Database {
-    private var db: FirebaseFirestore = FirebaseFirestore.getInstance()
-    private var _events: MutableLiveData<ArrayList<CalendarEvent>> = MutableLiveData()
+    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+    private val _events = MutableLiveData<ArrayList<CalendarEvent>>()
 
     fun getEvents(): MutableLiveData<ArrayList<CalendarEvent>>{
-        var tempEvents: ArrayList<CalendarEvent> = ArrayList()
+        val tempEvents: ArrayList<CalendarEvent> = ArrayList()
         db.collection("events")
             .get()
             .addOnSuccessListener { result ->
@@ -22,7 +22,7 @@ class Database {
                     )
                     tempEvents.add(event)
                 }
-                _events.value = tempEvents;
+                _events.value = tempEvents
             }
             .addOnFailureListener { exception ->
 
