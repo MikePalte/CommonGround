@@ -17,6 +17,7 @@
         android:layout_marginEnd="176dp"
         android:layout_marginRight="176dp"
         android:layout_marginBottom="226dp"
+        android:alpha="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,11 +25,13 @@
 
     <Button
         android:id="@+id/btnAddEvent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="144dp"
-        android:layout_marginBottom="352dp"
+        android:layout_width="208dp"
+        android:layout_height="59dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="380dp"
+        android:background="#CD4646"
         android:text="Add Event"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -38,14 +41,15 @@
         android:layout_height="45dp"
         android:layout_marginStart="99dp"
         android:layout_marginLeft="99dp"
-        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Event Date"
         android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddEvent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEventName" />
+        app:layout_constraintTop_toBottomOf="@+id/editEventName"
+        app:layout_constraintVertical_bias="0.41" />
 
     <EditText
         android:id="@+id/editEventName"
@@ -53,15 +57,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="102dp"
         android:layout_marginLeft="102dp"
-        android:layout_marginTop="37dp"
         android:layout_marginEnd="96dp"
         android:layout_marginRight="96dp"
-        android:layout_marginBottom="45dp"
         android:ems="10"
         android:hint="Event Name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editEventDate"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddEvent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -30,7 +30,7 @@ class AddEventActivity : AppCompatActivity() {
 
       val ACTION_BAR = supportActionBar
       //set actionbar title
-      ACTION_BAR!!.title = "New Activity"
+      ACTION_BAR!!.title = "Add Event"
       //set back button
       ACTION_BAR.setDisplayHomeAsUpEnabled(true)
       ACTION_BAR.setDisplayHomeAsUpEnabled(true)

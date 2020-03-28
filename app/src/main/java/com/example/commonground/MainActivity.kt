@@ -24,12 +24,13 @@ class MainActivity : AppCompatActivity() {
         }
         */
 
-        supportActionBar?.title = "Title"
+        supportActionBar?.title = "Common Ground"
 
 
         var listView = findViewById<ListView>(R.id.main_listview)
 
         var list = mutableListOf<CalendarEvent>()
+
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.events.observe(this, androidx.lifecycle.Observer {
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
+
 
     fun addNewEvent(view: View) {
         val intent = Intent(applicationContext, AddEventActivity::class.java)
