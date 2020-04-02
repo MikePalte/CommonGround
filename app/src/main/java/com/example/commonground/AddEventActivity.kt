@@ -31,9 +31,6 @@ class AddEventActivity : AppCompatActivity() {
       val ACTION_BAR = supportActionBar
       //set actionbar title
       ACTION_BAR!!.title = "Add Event"
-      //set back button
-      ACTION_BAR.setDisplayHomeAsUpEnabled(true)
-      ACTION_BAR.setDisplayHomeAsUpEnabled(true)
 
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
@@ -46,11 +43,5 @@ class AddEventActivity : AppCompatActivity() {
             editEventDate.text.clear()
         }
     }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
-
 
 }
