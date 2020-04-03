@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CommonGround</string>
+    <string name="location">Location</string>
+    <string name="event_name">Event Name</string>
+    <string name="date">Date</string>
+    <string name="add_event_button">Add Event</string>
 </resources>
