@@ -18,7 +18,8 @@ class Database {
                 for (document in result) {
                     val event = CalendarEvent(
                         document.get("eventName") as String,
-                        document.get("eventDate") as Timestamp
+                        document.get("eventDate") as Timestamp,
+                        document.get("eventLocation") as String
                     )
                     tempEvents.add(event)
                 }
