@@ -2,11 +2,17 @@ package com.example.commonground
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.commonground.ui.main.MainViewModel
 import com.google.firebase.Timestamp
+import kotlinx.android.synthetic.main.activity_add_event.*
 import kotlinx.android.synthetic.main.main_fragment.*
+import kotlinx.android.synthetic.main.main_fragment.btnAddEvent
+import kotlinx.android.synthetic.main.main_fragment.editEventDate
+import kotlinx.android.synthetic.main.main_fragment.editEventName
 import java.util.*
 
 
@@ -41,6 +47,7 @@ class AddEventActivity : AppCompatActivity() {
             viewModel.db.addEvent(editEventName.text.toString(), Timestamp(Date(editEventDate.text.toString())))
             editEventName.text.clear()
             editEventDate.text.clear()
+            editEventLocation.text.clear()
         }
     }
 
