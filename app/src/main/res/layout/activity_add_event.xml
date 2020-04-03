@@ -17,7 +17,7 @@
         android:text="@string/add_event_button" android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editLocation"/>
+        app:layout_constraintTop_toBottomOf="@+id/editEventLocation"/>
 
     <EditText
         android:id="@+id/editEventName"
@@ -27,26 +27,26 @@
         android:layout_marginLeft="1dp"
         android:layout_marginTop="164dp" android:layout_marginBottom="22dp" android:ems="10"
         android:hint="@string/event_name" android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editDate" app:layout_constraintStart_toStartOf="@+id/editDate"
+        app:layout_constraintBottom_toTopOf="@+id/editEventDate" app:layout_constraintStart_toStartOf="@+id/editEventDate"
         app:layout_constraintTop_toTopOf="parent"
     />
     <EditText
-        android:id="@+id/editLocation"
+        android:id="@+id/editEventLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="45dp"
         android:ems="10"
         android:hint="@string/location"
         android:inputType="textPersonName" app:layout_constraintBottom_toTopOf="@+id/btnAddEvent"
-        app:layout_constraintStart_toStartOf="@+id/editDate" app:layout_constraintTop_toBottomOf="@+id/editDate"
+        app:layout_constraintStart_toStartOf="@+id/editEventDate" app:layout_constraintTop_toBottomOf="@+id/editEventDate"
     />
     <EditText
-        android:id="@+id/editDate"
+        android:id="@+id/editEventDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
         android:ems="10" android:hint="@string/date" android:inputType="date"
-        app:layout_constraintBottom_toTopOf="@+id/editLocation" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editEventLocation" app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEventName"/>
 
