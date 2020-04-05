@@ -3,11 +3,13 @@ package com.example.commonground
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ListView
 import androidx.lifecycle.ViewModelProviders
 import com.example.commonground.DTO.CalendarEvent
 import com.example.commonground.DTO.MyAdapter
 import com.example.commonground.ui.main.MainViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,15 +34,11 @@ class MainActivity : AppCompatActivity() {
             listView.adapter = MyAdapter(this, R.layout.row, list)
 
         }
+
         })
-
-    }
-
-
-    fun addNewEvent() {
-        val intent = Intent(applicationContext, AddEventActivity::class.java)
-
-        startActivity(intent)
-
+        addNewEvent.setOnClickListener{
+            val intent = Intent(applicationContext, AddEventActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
