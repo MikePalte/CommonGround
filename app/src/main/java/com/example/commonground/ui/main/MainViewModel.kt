@@ -6,14 +6,14 @@ import com.example.commonground.DTO.CalendarEvent
 import com.example.commonground.Services.Database
 
 class MainViewModel: ViewModel() {
-    var events: MutableLiveData<ArrayList<CalendarEvent>> = MutableLiveData()
-    var db: Database = Database()
+    var calenderEvents: MutableLiveData<ArrayList<CalendarEvent>> = MutableLiveData()
+    var dbEvents: Database = Database()
 
     init{
         fetchEvents()
     }
 
     fun fetchEvents() {
-        events = db.getEvents()
+        calenderEvents = dbEvents.getEvents()
     }
 }

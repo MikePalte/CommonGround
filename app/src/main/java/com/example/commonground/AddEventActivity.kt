@@ -17,13 +17,6 @@ class AddEventActivity : AppCompatActivity() {
     }
 
 
-  /*  override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.activity_add_event, container, false)
-    }
-*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_event)
@@ -37,11 +30,11 @@ class AddEventActivity : AppCompatActivity() {
 
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.events.observe(this, Observer {
+        viewModel.calenderEvents.observe(this, Observer {
                 events -> txtEventName.text = events.get(0).eventName
         })
         btnAddEvent.setOnClickListener(){
-            viewModel.db.addEvent(editEventName.text.toString(), Timestamp(Date(editEventDate.text.toString())))
+            viewModel.dbEvents.addEvent(editEventName.text.toString(), Timestamp(Date(editEventDate.text.toString())))
             editEventName.text.clear()
             editEventDate.text.clear()
         }

@@ -17,12 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       /* if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
-                .commitNow()
-        }
-        */
+
 
         supportActionBar?.title = "Common Ground"
 
@@ -33,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.events.observe(this, androidx.lifecycle.Observer {
+        viewModel.calenderEvents.observe(this, androidx.lifecycle.Observer {
             events -> events.forEach {
             list.add(it)
             listView.adapter = MyAdapter(this, R.layout.row, list)
@@ -47,7 +42,6 @@ class MainActivity : AppCompatActivity() {
     fun addNewEvent(view: View) {
         val intent = Intent(applicationContext, AddEventActivity::class.java)
 
-     //   intent.putExtra("input", editEventName.text)
         startActivity(intent)
 
     }
