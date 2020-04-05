@@ -21,12 +21,11 @@ class AddEventActivity : AppCompatActivity() {
       val actionBar = supportActionBar
       actionBar!!.title = "Add Event"
       actionBar.setDisplayHomeAsUpEnabled(true)
-      actionBar.setDisplayHomeAsUpEnabled(true)
 
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.events.observe(this, Observer {
-                events -> txtEventName.text = events.get(0).eventName
+                events -> txtEventName.text = events[0].eventName
         })
         this.btnAddEvent.setOnClickListener(){
             viewModel.db.addEvent(editEventName.text.toString(), Timestamp(Date(editEventDate.text.toString())))
