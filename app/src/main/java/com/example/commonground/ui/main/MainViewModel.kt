@@ -13,7 +13,7 @@ class MainViewModel: ViewModel() {
         fetchEvents()
     }
 
-    fun fetchEvents() {
+    private fun fetchEvents() {
         events = db.getEvents()
     }
 }

@@ -17,7 +17,7 @@
         android:layout_marginEnd="162dp"
         android:layout_marginRight="162dp"
         android:layout_marginBottom="343dp"
-        android:text="Get Events"
+        android:text="@string/get_events"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
         android:layout_marginEnd="159dp"
         android:layout_marginRight="159dp"
         android:layout_marginBottom="100dp"
-        android:text="Add Event"
+        android:text="@string/add_event"
         app:layout_constraintBottom_toTopOf="@+id/btnGetEvents"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -68,7 +68,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btnAddEvent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEventName" />
+        app:layout_constraintTop_toBottomOf="@+id/editEventName"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editEventName"
@@ -81,11 +82,12 @@
         android:layout_marginRight="96dp"
         android:layout_marginBottom="45dp"
         android:ems="10"
-        android:hint="Event Name"
+        android:hint="@string/event_name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/editEventDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
