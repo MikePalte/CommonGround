@@ -18,7 +18,7 @@ class MyAdapter(var myAdapterContext:Context, var resources: Int, var items:List
         val descriptionTextView:TextView = view.findViewById(R.id.secondText)
 
 
-        val myAdapterItem = this.items[position]
+        var myAdapterItem:CalendarEvent = items[position]
         titleTextView.text = myAdapterItem.eventName
         descriptionTextView.text = myAdapterItem.eventDate.toDate().toString()
 

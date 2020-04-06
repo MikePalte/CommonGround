@@ -13,6 +13,9 @@ import kotlinx.android.synthetic.main.main_fragment.*
 import java.util.*
 
 class MainFragment : Fragment() {
+    companion object {
+        fun newInstance() = MainFragment()
+    }
 
     private lateinit var viewModel: MainViewModel
 
@@ -27,9 +30,9 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.events.observe(this, Observer {
-            events -> txtEventName.text = events[0].eventName
+            events -> txtEventName.text = events.get(0).eventName
         })
-        this.btnAddEvent.setOnClickListener {
+        btnAddEvent.setOnClickListener() {
             viewModel.db.addEvent(editEventName.text.toString(), Timestamp(Date(editEventDate.text.toString())))
             editEventName.text.clear()
             editEventDate.text.clear()

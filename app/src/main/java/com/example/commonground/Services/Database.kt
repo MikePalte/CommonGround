@@ -11,7 +11,7 @@ class Database {
     private var _events: MutableLiveData<ArrayList<CalendarEvent>> = MutableLiveData()
 
     fun getEvents(): MutableLiveData<ArrayList<CalendarEvent>>{
-        val tempEvents: ArrayList<CalendarEvent> = ArrayList()
+        var tempEvents: ArrayList<CalendarEvent> = ArrayList()
         db.collection("events")
             .get()
             .addOnSuccessListener { result ->
@@ -22,9 +22,9 @@ class Database {
                     )
                     tempEvents.add(event)
                 }
-                _events.value = tempEvents
+                _events.value = tempEvents;
             }
-            .addOnFailureListener {
+            .addOnFailureListener { exception ->
 
             }
         return _events

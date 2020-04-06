@@ -3,6 +3,7 @@ package com.example.commonground
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ListView
 import androidx.lifecycle.ViewModelProviders
 import com.example.commonground.DTO.CalendarEvent
@@ -16,13 +17,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        /* if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, MainFragment.newInstance())
+                .commitNow()
+        }
+        */
 
-        this.supportActionBar?.title = getString(R.string.title)
+        supportActionBar?.title = getString(R.string.title)
 
 
-        val listView = findViewById<ListView>(R.id.main_listview)
+        var listView = findViewById<ListView>(R.id.main_listview)
 
-        val list = mutableListOf<CalendarEvent>()
+        var list = mutableListOf<CalendarEvent>()
 
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
@@ -37,9 +44,10 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun addNewEvent() {
+    fun addNewEvent(view: View) {
         val intent = Intent(applicationContext, AddEventActivity::class.java)
 
+        //   intent.putExtra("input", editEventName.text)
         startActivity(intent)
 
     }
