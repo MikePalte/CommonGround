@@ -40,22 +40,14 @@ class AddEventActivity : AppCompatActivity() {
 
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.events.observe(this, Observer {
-                events -> txtEventName.text = events.get(0).eventName
-        })
-        btnAddEvent.setOnClickListener(){
+        var btnAddEvent = findViewById(R.id.btnAddEvent) as Button
+        btnAddEvent.setOnClickListener{
             viewModel.db.addEvent(editEventName.text.toString(), Timestamp(Date(editEventDate.text.toString())))
             editEventName.text.clear()
             editEventDate.text.clear()
-        }
-
-        var btnAddEvent = findViewById(R.id.btnAddEvent) as Button
-
-        btnAddEvent.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent);
         }
-
     }
 
 

@@ -34,4 +34,8 @@ class Database {
         val calendarEvent = hashMapOf("eventName" to eventName,"eventDate" to eventDate)
         db.collection("events").add(calendarEvent).addOnSuccessListener { getEvents() }
     }
+
+    fun getEventByDay(){
+
+    }
 }
