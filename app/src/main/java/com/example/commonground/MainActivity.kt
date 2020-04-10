@@ -4,16 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.CalendarView
 import android.widget.ListView
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import com.example.commonground.DTO.CalendarEvent
 import com.example.commonground.DTO.MyAdapter
 import com.example.commonground.ui.main.MainViewModel
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
-
+    lateinit var calendar: Calendar
+    lateinit var calendarView: CalendarView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,6 +44,24 @@ class MainActivity : AppCompatActivity() {
         }
         })
 
+        calendar = Calendar.getInstance();
+        calendar.set(Calendar.MONTH, Calendar.NOVEMBER);
+        calendar.set(Calendar.DAY_OF_MONTH, 9);
+        calendar.set(Calendar.YEAR, 2012);
+
+
+        calendar.add(Calendar.DAY_OF_MONTH, 1);
+        calendar.add(Calendar.YEAR, 1);
+
+
+        calendarView = findViewById(R.id.calendarView);
+
+
+        calendarView.setOnDateChangeListener { calendarView, i, i1, i2 ->
+            val msg =
+                "Selected date Day: " + i2 + " Month : " + (i1 + 1) + " Year " + i
+            Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
+        }
     }
 
 
