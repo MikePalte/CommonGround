@@ -8,7 +8,8 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.commonground.R
 
-class MyAdapter(var myAdapterContext:Context, var resources: Int, var items:List<CalendarEvent>):ArrayAdapter<CalendarEvent>(myAdapterContext, resources, items) {
+class MyAdapter(var myAdapterContext:Context, var resources: Int,
+                var items:List<CalendarEvent>):ArrayAdapter<CalendarEvent>(myAdapterContext, resources, items) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val layoutInflater:LayoutInflater = LayoutInflater.from(myAdapterContext)

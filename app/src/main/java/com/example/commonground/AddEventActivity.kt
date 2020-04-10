@@ -1,7 +1,10 @@
 package com.example.commonground
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.commonground.ui.main.MainViewModel
@@ -45,7 +48,16 @@ class AddEventActivity : AppCompatActivity() {
             editEventName.text.clear()
             editEventDate.text.clear()
         }
+
+        var btnAddEvent = findViewById(R.id.btnAddEvent) as Button
+
+        btnAddEvent.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent);
+        }
+
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
