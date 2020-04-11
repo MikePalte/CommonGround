@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.commonground.DTO.CalendarEvent
 import com.example.commonground.DTO.MyAdapter
 import com.example.commonground.ui.main.MainViewModel
+import com.google.firebase.Timestamp
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -37,30 +38,31 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.events.observe(this, androidx.lifecycle.Observer {
-            events -> events.forEach {
-            list.add(it)
-            listView.adapter = MyAdapter(this, R.layout.row, list)
-
-        }
+            list = mutableListOf<CalendarEvent>();
+            if (it.size == 0){
+                list.add(CalendarEvent("No events today.", Timestamp(calendar.time)))
+                listView.adapter = MyAdapter(this, R.layout.row, list)
+            } else {
+                it.forEach {
+                    list.add(it)
+                    listView.adapter = MyAdapter(this, R.layout.row, list)
+                }
+            }
         })
 
         calendar = Calendar.getInstance();
-        calendar.set(Calendar.MONTH, Calendar.NOVEMBER);
-        calendar.set(Calendar.DAY_OF_MONTH, 9);
-        calendar.set(Calendar.YEAR, 2012);
+        val today = Date();
+        calendar.set(Calendar.MONTH, today.month);
+        calendar.set(Calendar.DAY_OF_MONTH, today.day + 5);
+        calendar.set(Calendar.YEAR, today.year + 1900);
 
-
-        calendar.add(Calendar.DAY_OF_MONTH, 1);
-        calendar.add(Calendar.YEAR, 1);
-
+        viewModel.db.getEventByDay(today.year, today.month, today.day)
 
         calendarView = findViewById(R.id.calendarView);
 
-
-        calendarView.setOnDateChangeListener { calendarView, i, i1, i2 ->
-            val msg =
-                "Selected date Day: " + i2 + " Month : " + (i1 + 1) + " Year " + i
-            Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
+        calendarView.setOnDateChangeListener { calendarView, year, month, day ->
+            calendar.set(year, month, day)
+            viewModel.db.getEventByDay(year, month, day)
         }
     }
 
