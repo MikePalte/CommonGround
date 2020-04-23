@@ -29,9 +29,6 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.events.observe(this, Observer {
-            events -> txtEventName.text = events.get(0).eventName
-        })
         btnAddEvent.setOnClickListener() {
             viewModel.db.addEvent(editEventName.text.toString(), Timestamp(Date(editEventDate.text.toString())))
             editEventName.text.clear()
