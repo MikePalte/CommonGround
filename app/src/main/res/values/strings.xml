@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CommonGround</string>
+    <string name="title">Common Ground</string>
+    <string name="event_date">Event Date</string>
+    <string name="get_events">Get Events</string>
+    <string name="add_event">Add Event</string>
+    <string name="event_name">Event Name</string>
+    <string name="main_text">Main Text</string>
+    <string name="second_text">Second Text</string>
 </resources>

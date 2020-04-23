@@ -30,7 +30,7 @@
         android:layout_marginLeft="100dp"
         android:layout_marginBottom="380dp"
         android:background="#CD4646"
-        android:text="Add Event"
+        android:text="@string/add_event"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -42,14 +42,15 @@
         android:layout_marginStart="99dp"
         android:layout_marginLeft="99dp"
         android:ems="10"
-        android:hint="Event Date"
+        android:hint="@string/event_date"
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/btnAddEvent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEventName"
-        app:layout_constraintVertical_bias="0.41" />
+        app:layout_constraintVertical_bias="0.41"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editEventName"
@@ -60,12 +61,13 @@
         android:layout_marginEnd="96dp"
         android:layout_marginRight="96dp"
         android:ems="10"
-        android:hint="Event Name"
+        android:hint="@string/event_name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/btnAddEvent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
